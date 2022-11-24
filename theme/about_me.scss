@@ -1,0 +1,46 @@
+.about_me{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+  flex-wrap: wrap;
+
+  p{
+    color: #FFFFFF;
+  } 
+  
+  h1{
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+}
+
+.right_section{
+  width: 50%;
+
+  #description{
+    color: rgb(175, 174, 174);
+  }
+
+  .concept{
+    width: 80%;
+    margin-top: 80px;
+    
+    img{
+      margin-left: 100px;
+    }
+  }
+
+  .mobile_uiux{
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+
+    #mobile{
+      flex: 0 0 40%;
+    }
+
+    #uiux{
+      flex: 0 0 40%;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.projects_container{
+  margin-top: 7%;
+
+  #all_projects{
+    padding-left: 7%;
+    color: #81f9b9;
+  }
+
+  #all_projects:hover{
+    color: #FFFFFF;
+  }
+
+
+  hr{
+    width: 87%;
+  }
+}
+
+.projects{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,146 @@
+.contact{
+  margin-top: 5%;
+}
+
+.underline{
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.underline:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #81f9b9;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+  transform-origin:100% 50%
+}
+
+.underline:hover:after { 
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+}
+
+.title{
+  padding-left: 12.5%;
+
+  h1{
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+
+  span{
+    color: #81f9b9;
+  }
+}
+
+.contact_form{
+  display: flex;
+  padding-top: 30px;
+  justify-content: space-around;
+  align-items: baseline;
+  
+  form{
+    display: flex;
+    flex-direction: column;
+    
+    input, textarea{
+      border: none;
+      background-color: #576374;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: "Rockwell";
+    }
+
+    input::placeholder, textarea::placeholder{
+      color: #FFFFFF;
+    }
+
+    button{
+      background-color: #81f9b9;
+      border: 1px solid #81f9b9;
+      border-radius: 5px;
+      padding: 10px 5px 5px 5px;
+      width: 50%;
+      cursor: pointer;
+      color: #222222;
+      font-family: "Rockwell";
+      margin: auto;
+    }
+
+    button:hover{
+      background-color: #FFFFFF;
+      color: #222222;
+      border: 1px solid #BAB7B7;
+    }
+  }
+
+  .infos{
+    position: relative;
+    bottom: 30px;
+
+    h2{
+      color: #FFFFFF;
+    }
+
+    .nav_logo{
+      display: flex;
+      justify-content: space-between;
+    
+      a{
+        text-decoration: none;
+        color: #FFFFFF;
+        display: flex;
+        padding: 12px 0;
+      }
+
+      a:hover{
+        color: #81f9b9;
+      }
+    }
+  }
+}
+
+@keyframes arrowBounce {
+	0% {
+    transform: translate(-50%, 0);
+  }
+  20%,75% {
+    transform: translate(-50%, 15);
+  }
+	50% {
+ transform: translate(-50%, 20px);
+  }
+}
+
+.footer{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+
+  .social_medias{
+    img{
+      cursor: pointer;
+      width: 30%;
+    }
+  }
+
+  p{
+    margin-top: 30px;
+    color: #BAB7B7;
+  }
+
+  #arrow_to_top{
+    position: relative;
+    bottom: 10px;
+    animation-name: arrowBounce;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    transform: translate(-50%, 0);
+  }
+}
