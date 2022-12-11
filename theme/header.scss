@@ -99,6 +99,10 @@ input:checked + .slider:before {
   }
 }
 
+.hamburger_menu{
+  display: none;
+}
+
 .social_media{
   display: flex;
   align-items: baseline;
@@ -112,5 +116,111 @@ input:checked + .slider:before {
 
   a:hover{
     color: #81f9b9;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  body{
+    width: 100%;
+  }
+
+  .header{
+    width: 100%;
+    align-items: center;
+  }
+
+  .name_switch{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex: 1 0 0;
+  }
+
+  .navbar{
+    nav{
+      flex-direction: column;
+    }
+  }
+
+  .hamburger_menu{
+    display: flex;
+    padding: inherit;
+
+    input{
+      display: none;
+    }
+
+    span{
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;  
+      background: #81f9b9;
+      border-radius: 3px; 
+      z-index: 1;
+      transform-origin: 4px 0px;
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                  opacity 0.55s ease;
+    }
+  }
+
+  .hamburger .bar1 {
+    transform-origin: 5%;
+  }
+
+  .hamburger .bar3 {
+    transform-origin: 5%;
+  }
+
+  .checkbox:checked + label > .hamburger > .bar1{
+    transform: rotate(45deg);
+    position: relative;
+    bottom: 2.5px;
+    left: 2px;
+  }
+
+  .checkbox:checked + label > .hamburger > .bar2{
+    transform: rotate(-45deg);
+    background-color: transparent;
+  }
+
+  .checkbox:checked + label > .hamburger > .bar3{
+    transform: rotate(-45deg);
+    position: relative;
+    left: 2px;
+  }
+  
+  .open-menu {
+    opacity: 1;
+    display: flex;
+    -webkit-animation: slide-in-right 0.5s 
+    cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-right 0.5s 
+    cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    background-color: #81f9b9;
+    position: absolute;
+    right: 0;
+    left: 10px;
+    top: 80px;
+    z-index: 1;
+
+    nav a{
+      margin-top: 20px;
+      padding: 10px;
+    }
+  }
+  
+  .closed-menu {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    display: none;
+  }
+
+  .social_media{
+    display: none;
   }
 }

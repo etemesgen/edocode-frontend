@@ -4,12 +4,22 @@
     <div :class="[isDark ? 'header' : 'header light_mode']">
       <div class="name_switch">
         <p>Edomiyas Temesgen</p>
-        <label class="switch">
+        <!-- <label class="switch">
           <input type="checkbox" @click="isDark = !isDark">
           <span class="slider round"></span>
+        </label> -->
+      </div>
+      <div class="hamburger_menu"> 
+        <input type="checkbox" id="checkbox" class="checkbox" @click="showMenu()">
+        <label for="checkbox">
+            <div class="hamburger">
+              <span class="bar bar1"></span>
+              <span class="bar bar2"></span>
+              <span class="bar bar3"></span>
+            </div>
         </label>
       </div>
-      <div class="navbar">
+      <div class="navbar" :class="showMobileMenu ? 'open-menu' : 'closed-menu'">
         <nav>
           <a href="">Home</a>
           <a href="#AboutMe">About me</a>
@@ -98,10 +108,9 @@
       <a href="https://github.com/etemesgen?tab=repositories" target="_blank" id="all_projects">All projects</a>
       <hr>
       <div class="projects">
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
+        <div v-for="(project, i) in projects" :key="i">
+          <ProjectCard :title="project.name" :description="project.desc" :technologies="project.technologies" :onlineLink="project.onlinelink" :githubLink="project.githublink" />
+        </div>
       </div>
     </div>
 
@@ -185,7 +194,22 @@ export default Vue.extend({
       uiUxDesign: [
         require("../assets/tech/figma.png")
       ],
+      projects: [],
+      showMobileMenu: false
     }
+  },
+  methods:{
+    async getProjects() {
+      const projectResponse = await this.$axios.$get(this.$config.PROJECTS_URL);
+      
+      this.projects = projectResponse;
+    },
+    showMenu(){
+      this.showMobileMenu = !this.showMobileMenu;
+    }
+  },
+  created(){
+    this.getProjects();
   }
 })
 </script>

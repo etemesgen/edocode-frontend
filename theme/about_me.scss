@@ -44,3 +44,56 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .about_me{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right_section{
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+
+    h1{
+      font-size: 1.5rem;
+      padding-left: 5%;
+    }
+
+    #quote{
+      padding-left: 5%;
+    }
+
+    #description{
+      display: none;
+    }
+
+    .concept{
+      display: flex;
+      width: 100%;
+
+      img{
+        width: 50px;
+        margin: auto;
+      }
+    }
+
+    .mobile_uiux{
+      flex-direction: column;
+      padding: 0 20px 0 20px;
+    }
+  }
+
+  .ccc{
+    flex-direction: column;
+    padding-left: 25px;
+
+    .chart{
+      
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

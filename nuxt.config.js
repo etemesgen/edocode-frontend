@@ -31,13 +31,19 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/dotenv'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  publicRuntimeConfig: {
+    PROJECTS_URL: process.env.PROJECTS_URL
+  },
 }

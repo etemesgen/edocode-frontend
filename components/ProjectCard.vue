@@ -5,14 +5,14 @@
       </div>
       <div class="right_section">
         <div class="title_desc">
-          <h2>Tip Calculator app</h2>
-          <p>To help servers or restaurants to calculate tip.</p>
+          <h2>{{ this.title }}</h2>
+          <p>{{ this.description }}</p>
         </div>
         <div class="techs_links">
-          <p>HTML, CSS, JS</p>
+          <p v-for="(tech, i) in this.technologies" :key="i">{{ tech }}</p>
           <div>
-            <a href=""><img src="../assets/project_links/github_link.png" alt="github_link"></a>
-            <a href=""><img src="../assets/project_links/online_link.png" alt="online_link"></a>
+            <a :href="this.githubLink" target="_blank"><img src="../assets/project_links/github_link.png" alt="github_link"></a>
+            <a :href="this.onlineLink" target="_blank"><img src="../assets/project_links/online_link.png" alt="online_link"></a>
           </div>
         </div>
       </div>
@@ -29,8 +29,8 @@ export default Vue.extend({
     title: { type : String },
     description: { type : String },
     technologies: { type : Array },
-    onlineLink: { type: URL },
-    githubLink: { type: URL }  
+    onlineLink: { type: String },
+    githubLink: { type: String }  
   }
 })
 </script>
@@ -48,7 +48,7 @@ export default Vue.extend({
     img{
       border-radius: 10px 0 0 10px;
       width: 260px;
-      height: 179px;
+      height: 100%;
     }
   }
 
@@ -64,6 +64,7 @@ export default Vue.extend({
 
   .title_desc{
     padding-left: 20px;
+    height: 60%;
   }
 
   .techs_links{
@@ -71,7 +72,6 @@ export default Vue.extend({
     justify-content: space-between;
     align-items: baseline;
     background-color: #a7ffd07a;
-    height: 47px;
     border-radius: 0 0 10px 0;
 
     p{
@@ -91,4 +91,29 @@ export default Vue.extend({
   transform: scale(1.1);
 }
 
+@media only screen and (max-width: 768px) {
+  .projectCard{
+    flex-direction: column;
+    width: 20rem;
+    height: auto;
+
+    .left_section{
+      img{
+        border: 1px solid #81f9b9;
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+      }
+    }
+
+    .right_section{
+      border-radius: 0 0 10px 10px;
+      position: relative;
+      bottom: 5px;
+
+      h2{
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
 </style>

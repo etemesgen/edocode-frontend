@@ -40,6 +40,7 @@
   padding-top: 30px;
   justify-content: space-around;
   align-items: baseline;
+  flex-wrap: wrap;
   
   form{
     display: flex;
@@ -142,5 +143,30 @@
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
     transform: translate(-50%, 0);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contact{
+    margin-top: 20%;
+  }
+
+  .infos{
+    top: 30px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    h2{
+      font-size: 1.2rem;
+    }
+  }
+
+  .footer{
+    padding-left: 20px;
+    
+    #arrow_to_top{
+      left: 5px;
+    }
   }
 }
